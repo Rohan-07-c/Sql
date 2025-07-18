@@ -1,0 +1,11 @@
+create database Prem;
+use Prem;
+create table Employees(EmpId int(8),name varchar(10),department varchar(10),salary int(6))
+insert into Employees(EmpId,name,department,salary) values(101,'Alice','HR',50000),(102,'Bob','Finance',60000),(103,'Charlie','IT',70000)
+select*from Employees
+alter table  Employees add joiningdate varchar(10) 
+update Employees
+set salary=65000
+where EmpId=102;
+delete from Employees
+where name='Charlie
