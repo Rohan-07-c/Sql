@@ -1,0 +1,23 @@
+create database Sakth;
+use Sakth;
+
+create table Students (
+	StudentId int(20),
+    Name varchar(50),
+    Department varchar(30),
+    Marks int(5));
+    
+insert into Students (StudentId,Name,Department,Marks)
+values(1 , 'Ravi' , 'CSE', 85),(2 , 'Priya' , 'EcE', 78),(3 , 'Arjun' , 'CSE', 92),(4 , 'Neha' , 'ME', 67),(5 , 'Anjali' , 'ECE', 74);
+
+alter table Students add Email varchar(10);
+
+select * from Students;
+
+delete from Students where Marks<70;
+
+
+set SQL_SAFE_UPDATES=0;
+update Students 
+set Marks=Marks+5
+where Department='CSE';
