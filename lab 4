@@ -1,0 +1,59 @@
+CREATE DATABASE Prem_andagada;
+USE Prem_andagada;
+
+CREATE TABLE Employees (
+    EmpId INT(8),
+    name VARCHAR(10),
+    department VARCHAR(10),
+    salary INT(6),
+    city varchar(10)
+);
+
+INSERT INTO Employees (EmpId, name, department, salary,city) 
+VALUES(101, 'Harshita', 'HR', 45000,'Delhi'),
+    (102, 'Manasa', 'IT', 60000,'Mumbai'),
+    (103, 'Vardini', 'Sales', 50000,'Delhi'),
+    (104, 'Gayathri', 'IT', 70000,'Bangalore'),
+    (105, 'Saketh', 'Finance', 40000,'Chennai'),
+    (106, 'Heaker', 'HR', 48000,'Delhi'),
+    (107, 'Sathvik', 'Sales', 52000,'Hyderabad'),
+    (108, 'Megana', 'IT', 75000,'Mumbai');
+
+SELECT * FROM Employees;
+
+select name from Employees where city='Delhi';
+
+select name,department
+from Employees
+where department='IT' or department='HR';
+
+select name from Employees where city in('Delhi','Bangalore','Hyderabad');
+
+select name,salary,city
+from Employees
+where salary>50000 and city='Mumbai';
+
+select name as Not_in_sales
+from Employees 
+where department not in('Sales');
+
+select name,salary,city
+from Employees
+where salary>=50000 and salary<=60000;
+
+select name,salary,department
+from Employees
+where salary>65000 and department='IT';
+
+select name 
+from Employees
+where name like 'M%' or name like 'm%';
+
+select name 
+from Employees
+where name like '%i' or name like '%I';
+
+select name 
+from Employees
+where name like '%sh%';
+
