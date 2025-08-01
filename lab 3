@@ -1,0 +1,46 @@
+CREATE DATABASE Prem241;
+USE Prem241;
+
+CREATE TABLE Employees (
+    EmpId INT(8),
+    name VARCHAR(10),
+    department VARCHAR(10),
+    salary INT(6),
+    Date INT(5)
+);
+
+INSERT INTO Employees (EmpId, name, department, salary,Date) 
+VALUES(101, 'Alice', 'HR', 50000,2022),
+    (102, 'Bob', 'Finance', 60000,2023),
+    (103, 'Charlie', 'IT', 70000,2015),
+    (104, 'Chie', 'IT', 90000,2017),
+    (105, 'Pop', 'Finance', 10000,2025),
+    (106, 'lice', 'HR', 30000,2019);
+
+SELECT * FROM Employees;
+
+ALTER TABLE Employees ADD joiningdate int(10);
+
+SELECT SUM(salary) AS Total_Salary FROM Employees;
+
+SELECT COUNT(name) AS Total_Employee FROM Employees;
+
+SELECT AVG(salary) AS Average FROM Employees;
+
+SELECT MAX(salary) AS Maximum, MIN(salary) AS Minimum FROM Employees;
+
+SELECT COUNT(DISTINCT department) AS Total_departments FROM Employees;
+
+SELECT department, AVG(salary) AS Avg_salary_department FROM Employees GROUP BY department;
+
+SELECT name, AVG(salary) AS Avg_salary_name FROM Employees GROUP BY name;
+
+SELECT department, SUM(salary) AS Total_salary_department FROM Employees GROUP BY department;
+
+SELECT department, COUNT(name) AS Total_Employee_department FROM Employees GROUP BY department;
+
+SELECT department, MAX(salary) AS Highest_salary_department,MIN(salary) AS Lowest_salary_department FROM Employees GROUP BY department;
+
+select name from Employees where Date>2015;
+
+ 
